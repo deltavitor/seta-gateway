@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: seta-gateway
+server:
+  port: 10000
