@@ -1,5 +1,16 @@
+seta:
+  urls:
+    seta-notification-api-url: "http://localhost:10001"
 spring:
   application:
     name: seta-gateway
 server:
   port: 10000
+logging:
+  level:
+    reactor:
+      netty: INFO
+    org:
+      springframework:
+        cloud:
+          gateway: TRACE
