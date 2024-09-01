@@ -1,4 +1,4 @@
-package edu.costavitor.setagateway.routes.notifications;
+package edu.costavitor.setagateway.routes.notification_locations;
 
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
@@ -9,15 +9,14 @@ import org.springframework.http.HttpMethod;
 import static edu.costavitor.setagateway.configurations.SetaApiUrls.SETA_NOTIFICATION_API_URL;
 
 @Configuration
-public class FindAllGeocodedNotificationsRoute {
+public class FindAllNotificationLocationsRoute {
 
     @Bean
-    public RouteLocator findAllGeocodedNotificationsRouteLocator(RouteLocatorBuilder builder) {
+    public RouteLocator findAllNotificationLocationsRouteLocator(RouteLocatorBuilder builder) {
 
-        return builder.routes().route("findAllGeocodedNotifications", p -> p
-                        .path("/notifications")
+        return builder.routes().route("findAllNotificationLocations", p -> p
+                        .path("/notification-locations")
                         .and().method(HttpMethod.GET)
-                        .and().query("returnGeocodedNotifications")
                         .uri(SETA_NOTIFICATION_API_URL))
                 .build();
     }
