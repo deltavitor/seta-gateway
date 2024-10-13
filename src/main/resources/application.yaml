@@ -1,9 +1,23 @@
 seta:
   urls:
+    seta-analysis-api-url: "http://localhost:5000"
     seta-notification-api-url: "http://localhost:10001"
 spring:
   application:
     name: seta-gateway
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        cors-configurations:
+          "[/**]":
+            allowed-origins:
+              - "*"
+            allowed-methods:
+              - "*"
+            allowed-headers:
+              - "*"
 server:
   port: 10000
 logging:
