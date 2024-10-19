@@ -9,16 +9,16 @@ import org.springframework.http.HttpMethod;
 import static edu.costavitor.setagateway.configurations.SetaApiUrls.SETA_NOTIFICATION_API_URL;
 
 @Configuration
-public class FindAllNotificationsRoute {
+public class FindAllUnmappedNotificationsRoute {
 
     @Bean
-    public RouteLocator findAllNotificationsRouteLocator(RouteLocatorBuilder builder) {
+    public RouteLocator findAllUnmappedNotificationsRouteLocator(RouteLocatorBuilder builder) {
 
-        return builder.routes().route("findAllNotifications", p -> p
+        return builder.routes().route("findAllUnmappedNotifications", p -> p
                         .path("/notifications")
-                        .and().not(predicate -> predicate.query("returnUnmappedNotificationsOnly"))
+                        .and().query("returnUnmappedNotificationsOnly")
                         .and().method(HttpMethod.GET)
                         .uri(SETA_NOTIFICATION_API_URL))
-                    .build();
+                .build();
     }
 }
