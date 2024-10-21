@@ -12,12 +12,13 @@ spring:
       globalcors:
         cors-configurations:
           "[/**]":
-            allowed-origins:
-              - "*"
             allowed-methods:
               - "*"
             allowed-headers:
               - "*"
+            allowed-origin-patterns:
+              - "*"
+            allow-credentials: true
 server:
   port: 10000
 logging:
