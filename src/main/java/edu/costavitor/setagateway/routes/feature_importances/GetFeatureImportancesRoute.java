@@ -14,7 +14,7 @@ public class GetFeatureImportancesRoute {
     public RouteLocator getFeatureImportancesRouteLocator(RouteLocatorBuilder builder) {
 
         return builder.routes().route("getFeatureImportances", p -> p
-                        .path("/feature/importances")
+                        .path("/feature-importances")
                         .uri(SETA_ANALYSIS_API_URL))
                 .build();
     }
