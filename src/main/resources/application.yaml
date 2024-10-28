@@ -20,7 +20,7 @@ spring:
               - "*"
             allow-credentials: true
 server:
-  port: 10000
+  port: ${PORT}
 logging:
   level:
     reactor:
